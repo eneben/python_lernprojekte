@@ -2,17 +2,23 @@
 
 def note_berechnen(punkte):
     if punkte >= 90:
-        return "Sehr gut"
+        return "1: Sehr gut"
     elif punkte >= 75:
-        return "Gut"
+        return "2: Gut"
     elif punkte >= 60:
-        return "Befriedigend"
+        return "3: Befriedigend"
     elif punkte >= 50:
-        return "Ausreichend"
+        return "4: Ausreichend"
     else:
         return "Nicht bestanden"
 
-punkte = int(input("Bitte geben Sie Ihre Punkte ein: "))
+# punkte = int(input("Bitte geben Sie Ihre Punkte ein: "))
 
-print("Die Note ist: ", note_berechnen(punkte))
+# print("Die Note ist: ", note_berechnen(punkte))
 
+assert note_berechnen(95) == "1: Sehr gut" # Normal
+assert note_berechnen(90) == "1: Sehr gut" # Grenze
+assert note_berechnen(89) == "2: Gut" # knapp
+assert note_berechnen(0) == "Nicht bestanden"
+
+print("Alle Tests erfolgreich.")
