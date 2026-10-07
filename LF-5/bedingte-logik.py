@@ -1,7 +1,9 @@
 # Funktion zum Noten Berechnen
 
 def note_berechnen(punkte):
-    if punkte >= 90:
+    if punkte < 0:
+        raise ValueError("Punkte können nicht negativ sein.")
+    elif punkte >= 90:
         return "1: Sehr gut"
     elif punkte >= 75:
         return "2: Gut"
