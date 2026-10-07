@@ -5,8 +5,11 @@ def fahrbereit(alter, hat_fuehrerschein):
         print("Du darfst nicht fahren!")
 
 alter = int(input("Bitte gib dein Alter ein: "))
-hatF = input("Haben Sie einen Führerschein? (ja/nein)")
+# hatF = input("Haben Sie einen Führerschein? (ja/nein)")
 
-hat_fuehrerschein_boolean = hatF in ["ja", "yes", "True", "true"]
+# hat_fuehrerschein_boolean = hatF in ["ja", "yes", "True", "true"]
+
+hat_fuehrerschein_boolean = input("Haben Sie einen Führerschein? " \
+"1 = ja, 0 = nein: ") == "1"
 
 fahrbereit(alter, hat_fuehrerschein_boolean)
