@@ -38,4 +38,12 @@ assert (enthaelt([], "Marmelade")) == False             # leere Liste
 # Zusatzaufgabe: Artikel nur hinzufügen, wenn er noch nicht auf der Liste steht
 
 def hinzufuegen(liste, artikel):
-    
+    for item in liste:
+        if item == artikel:
+            return liste
+    liste.append(artikel)
+    return liste
+
+assert hinzufuegen(["Brot", "Käse"], "Brot") == ["Brot", "Käse"]
+assert hinzufuegen(["Brot", "Käse"], "Eier") == ["Brot", "Käse", "Eier"]
+assert hinzufuegen([], "Brot") == ["Brot"]
