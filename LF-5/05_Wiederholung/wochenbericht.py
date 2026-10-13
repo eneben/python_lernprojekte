@@ -85,6 +85,27 @@ assert lange_tickets([5, 17, 35, 50, 6]) == []
 print("Tests zu Funktion: lange_tickets durchgelaufen.")
 
 
+# Zusatzaufgabe: Anteil der langen Tickets in Prozent
+
+def anteil_lang(dauern):
+    if not dauern:
+        raise ValueError("Keine Dauern empfangen.")
+    lange_liste = lange_tickets(dauern)
+    anteil_lang = len(lange_liste) / len(dauern) * 100
+    return anteil_lang
+
+assert anteil_lang([5, 17, 35, 300, 50]) == 20
+
+try:
+    anteil_lang([])
+except ValueError:
+    pass
+else:
+    assert False, "Es hätte ein ValueError auftreten müssen."
+
+print("Tests zu Funktion: anteil_lang durchgelaufen.")
+
+
 # Schritt 4: Funktionen
 def durchschnitt(dauern):
     if not dauern:
@@ -114,6 +135,7 @@ def bericht(dauern):
     print("Durchschnitt: ", durchschnitt(dauern))
     print(f"schnell: {zaehle_stufen(dauern)[0]} | normal: {zaehle_stufen(dauern)[1]} | lang: {zaehle_stufen(dauern)[2]}")
     print("Lange Tickets: ", ", ".join(str(x) for x in (lange_tickets(dauern))))
+    print(f"Die langen Tickets entsprechen {anteil_lang(dauern):.1f} % der gesamten Tickets.")
 
 
 # bericht(zeiten)
@@ -143,10 +165,3 @@ def eingaben_nachtragen():
 eingaben_nachtragen()
 
 
-
-
-
-
-#  dauern = einlesen(roh), dann in einer while-Schleife weitere Minuten abfragen.
-#       "ende" beendet die Eingabe, ungültige Eingaben werden gemeldet und übersprungen.
-#       Zum Schluss bericht(dauern) aufrufen.
