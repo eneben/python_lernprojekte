@@ -2,7 +2,6 @@
 # Ein Parkhaus hat eine feste Zahl an Plätzen. Autos fahren ein und aus.
 # Die Zahl der belegten Plätze darf nur über Methoden geändert werden.
 
-
 class Parkhaus:
     def __init__(self, name, plaetze):
         self.name = name
@@ -53,3 +52,4 @@ print("Freie Plätze nachher:", am_markt.freie_plaetze())
 
 print("Prüfung von __str__:")
 print(am_markt)
+
