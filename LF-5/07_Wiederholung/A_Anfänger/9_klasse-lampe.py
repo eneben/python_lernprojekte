@@ -1,6 +1,6 @@
 class Lampe:
     def __init__(self, raum):
-        self.raum
+        self.raum = raum
         self.an = False
 
     def einschalten(self):
@@ -16,4 +16,16 @@ class Lampe:
             print("Die Lampe war schon aus.")
 
     def status(self):
-        self.
+        if self.an:
+            return (f"{self.raum}: an")
+        else:
+            return(f"{self.raum}: aus")
+
+
+kueche = Lampe("Küche")
+flur = Lampe("Flur")
+
+kueche.einschalten()
+
+print(kueche.status())
+print(flur.status())
